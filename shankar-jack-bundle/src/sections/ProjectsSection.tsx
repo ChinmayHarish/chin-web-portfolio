@@ -1,0 +1,190 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { FadeIn } from '../components/FadeIn';
+import { LiveProjectButton } from '../components/LiveProjectButton';
+
+const PROJECTS = [
+  {
+    id: "01",
+    name: "PUMA — Hungry For More",
+    category: "Campaign Site",
+    url: "https://puma-hungry-for-more.netlify.app/",
+    description: "A high-performance campaign site for PUMA's Nitro Elite Speed Series, featuring immersive motion design and interactive product storytelling to capture the essence of speed.",
+    images: {
+      col1_1: "/A_hyper-detailed_close-up_of_a_202605022038.jpeg",
+      col1_2: "/A_hyper-detailed_close-up_of_a_202605022038 (1).jpeg"
+    }
+  },
+  {
+    id: "02",
+    name: "Explore Paradise",
+    category: "Luxury Travel Booking",
+    url: "https://effervescent-gingersnap-dfc9b4.netlify.app/",
+    description: "An exclusive travel booking experience designed for luxury escapes. Showcasing premium destinations, overwater sanctuaries, and elite penthouses with an elegant digital interface.",
+    images: {
+      col1_1: "/explore-paradise-3.png",
+      col1_2: "/explore-paradise-1.png"
+    }
+  },
+  {
+    id: "03",
+    name: "Capital Epitome",
+    category: "Real Estate Experience",
+    url: "https://capitalepitome.com/",
+    description: "A luxury residential digital experience showcasing premium 2 BHK apartments in Mangalore. Designed with elegance and sophistication to reflect the high-end architectural vision.",
+    images: {
+      col1_1: "/An_ultra-modern_architectural_exterior_of_202605022041.jpeg",
+      col1_2: "/An_ultra-modern_architectural_exterior_of_202605022041 (1).jpeg"
+    }
+  },
+  {
+    id: "04",
+    name: "Coco Veda",
+    category: "Wellness E-commerce",
+    url: "https://coco-veda.vercel.app/#",
+    description: "A wellness-focused e-commerce platform for cold-pressed virgin coconut oil products. Focused on organic brand identity, sustainability, and a seamless shopping experience.",
+    images: {
+      col1_1: "/A_premium_glass_bottle_of_202605022046.jpeg",
+      col1_2: "/A_premium_glass_bottle_of_202605022045.jpeg"
+    }
+  },
+  {
+    id: "05",
+    name: "Yacht Club",
+    category: "Luxury Lifestyle",
+    url: "https://legendary-llama-743f74.netlify.app/",
+    description: "An exclusive luxury lifestyle and community platform for yacht enthusiasts. Built with a focus on nautical elegance, membership management, and premium visual appeal.",
+    images: {
+      col1_1: "/A_macro_shot_of_a_202605022046 (1).jpeg",
+      col1_2: "/A_macro_shot_of_a_202605022046.jpeg"
+    }
+  },
+  {
+    id: "06",
+    name: "Manifest Drives",
+    category: "Shopify Store",
+    url: "https://manifestdrives.shop/",
+    description: "A bespoke Shopify storefront for high-end collectible car models. Combines bold automotive photography with a modern e-commerce flow to drive engagement and sales.",
+    images: {
+      col1_1: "/Model_car_on_metal_base_202605022056.jpeg",
+      col1_2: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800"
+    }
+  },
+  {
+    id: "07",
+    name: "Pagani Zonda R",
+    category: "Interactive Showcase",
+    url: "https://starlit-faun-29fba1.netlify.app/",
+    description: "An interactive showcase of the Pagani Zonda R, celebrating the pinnacle of track performance through state-of-the-art web design and aggressive automotive visuals.",
+    images: {
+      col1_1: "/Pagani_Zonda_R_exhaust_diffuser_202605022051.jpeg",
+      col1_2: "/Pagani_Zonda_R_exhaust_diffuser_202605022046.jpeg"
+    }
+  }
+];
+
+export const ProjectsSection = () => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  });
+
+  return (
+    <section id="projects" ref={container} className="relative bg-dark rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 pt-20 pb-40 px-5 sm:px-8 md:px-10 z-30">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        <FadeIn y={40} className="mb-16 sm:mb-20 md:mb-24">
+          <h2 className="hero-heading text-center font-black uppercase tracking-tight leading-none" style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}>
+            My Works
+          </h2>
+        </FadeIn>
+
+        <div className="w-full flex flex-col items-center gap-20 sm:gap-32 md:gap-40">
+          {PROJECTS.map((project, index) => {
+            return (
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                index={index} 
+                totalCards={PROJECTS.length}
+                progress={scrollYProgress}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+interface ProjectCardProps {
+  project: any;
+  index: number;
+  totalCards: number;
+  progress: any;
+}
+
+const ProjectCard = ({ project, index, totalCards, progress }: ProjectCardProps) => {
+  // Scaling effect starts when the card hits its sticky position
+  const start = index * (1 / totalCards);
+  const targetScale = 1 - (totalCards - index) * 0.05;
+  const scale = useTransform(progress, [start, 1], [1, targetScale]);
+  
+  // Sticky offsets: index * 40px to show stacking
+  const topOffset = 100 + (index * 40);
+
+  return (
+    <div 
+      className="sticky w-full min-h-[500px] sm:min-h-[600px] h-[85vh] sm:h-[80vh] flex flex-col items-center"
+      style={{ 
+        top: topOffset,
+        zIndex: index + 1,
+      }}
+    >
+      <motion.div 
+        style={{ scale }}
+        className="w-full bg-dark border-2 border-accent rounded-[40px] sm:rounded-[50px] md:rounded-[60px] p-4 sm:p-6 md:p-8 flex flex-col gap-6 sm:gap-8 overflow-y-auto sm:overflow-hidden shadow-2xl h-full scrollbar-hide"
+      >
+        {/* Top Row */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+          <div className="flex items-center gap-6 sm:gap-10">
+            <span className="font-black text-accent leading-none tracking-tighter" style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}>
+              {project.id}
+            </span>
+            <div className="flex flex-col">
+              <span className="text-accent/60 uppercase tracking-widest text-xs sm:text-sm font-medium">
+                {project.category}
+              </span>
+              <h3 className="text-accent font-medium uppercase" style={{ fontSize: 'clamp(1.2rem, 3vw, 2.5rem)' }}>
+                {project.name}
+              </h3>
+            </div>
+          </div>
+          <LiveProjectButton href={project.url} />
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 h-full overflow-hidden pb-4">
+          <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full md:w-[40%] h-full">
+            <img 
+              src={project.images.col1_1} 
+              alt={`${project.name} - ${project.category} visual 1`} 
+              className="w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] object-cover"
+              style={{ height: '40%' }}
+            />
+            <img 
+              src={project.images.col1_2} 
+              alt={`${project.name} - ${project.category} visual 2`} 
+              className="w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] object-cover flex-grow"
+              style={{ height: '60%' }}
+            />
+          </div>
+          <div className="w-full md:w-[60%] h-full flex items-center justify-center p-6 md:p-12 lg:p-16">
+            <p className="text-accent font-light leading-relaxed uppercase tracking-wider text-center md:text-left" style={{ fontSize: 'clamp(1rem, 2.2vw, 2rem)' }}>
+              {project.description}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
