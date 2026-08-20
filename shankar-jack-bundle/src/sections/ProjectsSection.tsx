@@ -19,7 +19,7 @@ const PROJECTS = [
     id: "02",
     name: "GEECEE Production",
     category: "Video Production House",
-    url: "",
+    url: "https://geecee-productions.vercel.app/",
     description: "A bold, dynamic portfolio for a video production house crafting commercial films, brand stories, and social-first content designed from concept to final cut to make attention-starved audiences look twice.",
     images: {
       col1_1: "/geecee-3.png",
