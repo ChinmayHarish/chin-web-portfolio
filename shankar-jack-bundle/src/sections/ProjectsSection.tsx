@@ -25,6 +25,17 @@ const PROJECTS = [
       col1_1: "/geecee-3.png",
       col1_2: "/geecee-2.png"
     }
+  },
+  {
+    id: "03",
+    name: "Strata",
+    category: "Productivity Workspace",
+    url: "https://strata-workspace.vercel.app/",
+    description: "A clean, fast-paced workspace built for teams tired of cluttered project boards and endless status meetings, designed to make managing tasks and shipping work feel effortless again.",
+    images: {
+      col1_1: "/strata-1.png",
+      col1_2: "/strata-2.png"
+    }
   }
 ];
 
