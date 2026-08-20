@@ -8,7 +8,7 @@ interface ProjectMedia {
 }
 
 const IMAGES: ProjectMedia[] = [
-  { src: "https://motionsites.ai/assets/hero-aetheris-voyage-preview-BGJn1z4t.gif", name: "Aetheris Voyage", url: "https://aetheris-voyage.vercel.app" },
+  { src: "https://image.mux.com/QXSAAL9UTEAH3SoaMLIkSSb01m02TgV1qtSWjzPNO1pFY/animated.webp?width=640&fps=15", name: "Equilibrium", url: "https://equilibrium-liquid-glass.vercel.app" },
   { src: "https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif", name: "CodeNest", url: "https://codenest-education-hero.netlify.app" },
   { src: "https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif", name: "VEX Ventures", url: "https://vex-ventures.vercel.app" },
   { src: "/mindloop.gif", name: "Mindloop", url: "https://mindloop-cinematic-landing-page.netlify.app" },

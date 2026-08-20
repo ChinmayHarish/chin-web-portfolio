@@ -6,79 +6,24 @@ import { LiveProjectButton } from '../components/LiveProjectButton';
 const PROJECTS = [
   {
     id: "01",
-    name: "PUMA — Hungry For More",
-    category: "Campaign Site",
-    url: "https://puma-hungry-for-more.netlify.app/",
-    description: "A high-performance campaign site for PUMA's Nitro Elite Speed Series, featuring immersive motion design and interactive product storytelling to capture the essence of speed.",
-    images: {
-      col1_1: "/A_hyper-detailed_close-up_of_a_202605022038.jpeg",
-      col1_2: "/A_hyper-detailed_close-up_of_a_202605022038 (1).jpeg"
-    }
-  },
-  {
-    id: "02",
-    name: "Explore Paradise",
-    category: "Luxury Travel Booking",
-    url: "https://effervescent-gingersnap-dfc9b4.netlify.app/",
-    description: "An exclusive travel booking experience designed for luxury escapes. Showcasing premium destinations, overwater sanctuaries, and elite penthouses with an elegant digital interface.",
-    images: {
-      col1_1: "/explore-paradise-3.png",
-      col1_2: "/explore-paradise-1.png"
-    }
-  },
-  {
-    id: "03",
     name: "Capital Epitome",
     category: "Real Estate Experience",
     url: "https://capitalepitome.com/",
     description: "A luxury residential digital experience showcasing premium 2 BHK apartments in Mangalore. Designed with elegance and sophistication to reflect the high-end architectural vision.",
     images: {
-      col1_1: "/An_ultra-modern_architectural_exterior_of_202605022041.jpeg",
-      col1_2: "/An_ultra-modern_architectural_exterior_of_202605022041 (1).jpeg"
+      col1_1: "/capital-epitome-1.png",
+      col1_2: "/capital-epitome-2.png"
     }
   },
   {
-    id: "04",
-    name: "Coco Veda",
-    category: "Wellness E-commerce",
-    url: "https://coco-veda.vercel.app/#",
-    description: "A wellness-focused e-commerce platform for cold-pressed virgin coconut oil products. Focused on organic brand identity, sustainability, and a seamless shopping experience.",
+    id: "02",
+    name: "GEECEE Production",
+    category: "Video Production House",
+    url: "",
+    description: "A bold, dynamic portfolio for a video production house crafting commercial films, brand stories, and social-first content designed from concept to final cut to make attention-starved audiences look twice.",
     images: {
-      col1_1: "/A_premium_glass_bottle_of_202605022046.jpeg",
-      col1_2: "/A_premium_glass_bottle_of_202605022045.jpeg"
-    }
-  },
-  {
-    id: "05",
-    name: "Yacht Club",
-    category: "Luxury Lifestyle",
-    url: "https://legendary-llama-743f74.netlify.app/",
-    description: "An exclusive luxury lifestyle and community platform for yacht enthusiasts. Built with a focus on nautical elegance, membership management, and premium visual appeal.",
-    images: {
-      col1_1: "/A_macro_shot_of_a_202605022046 (1).jpeg",
-      col1_2: "/A_macro_shot_of_a_202605022046.jpeg"
-    }
-  },
-  {
-    id: "06",
-    name: "Manifest Drives",
-    category: "Shopify Store",
-    url: "https://manifestdrives.shop/",
-    description: "A bespoke Shopify storefront for high-end collectible car models. Combines bold automotive photography with a modern e-commerce flow to drive engagement and sales.",
-    images: {
-      col1_1: "/Model_car_on_metal_base_202605022056.jpeg",
-      col1_2: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800"
-    }
-  },
-  {
-    id: "07",
-    name: "Pagani Zonda R",
-    category: "Interactive Showcase",
-    url: "https://starlit-faun-29fba1.netlify.app/",
-    description: "An interactive showcase of the Pagani Zonda R, celebrating the pinnacle of track performance through state-of-the-art web design and aggressive automotive visuals.",
-    images: {
-      col1_1: "/Pagani_Zonda_R_exhaust_diffuser_202605022051.jpeg",
-      col1_2: "/Pagani_Zonda_R_exhaust_diffuser_202605022046.jpeg"
+      col1_1: "/geecee-3.png",
+      col1_2: "/geecee-2.png"
     }
   }
 ];
@@ -160,7 +105,13 @@ const ProjectCard = ({ project, index, totalCards, progress }: ProjectCardProps)
               </h3>
             </div>
           </div>
-          <LiveProjectButton href={project.url} />
+          {project.url ? (
+            <LiveProjectButton href={project.url} />
+          ) : (
+            <span className="text-accent/40 text-xs sm:text-sm uppercase tracking-widest font-medium py-3">
+              Case Study
+            </span>
+          )}
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 h-full overflow-hidden pb-4">

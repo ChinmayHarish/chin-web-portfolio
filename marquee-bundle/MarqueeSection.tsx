@@ -8,7 +8,7 @@ interface ProjectMedia {
 }
 
 const IMAGES: ProjectMedia[] = [
-  { src: "/aetheris.gif", name: "Aetheris Voyage", url: "https://aetheris-voyage.vercel.app" },
+  { src: "https://image.mux.com/QXSAAL9UTEAH3SoaMLIkSSb01m02TgV1qtSWjzPNO1pFY/animated.webp?width=640&fps=15", name: "Equilibrium", url: "https://equilibrium-liquid-glass.vercel.app" },
   { src: "/codenest.gif", name: "CodeNest", url: "https://codenest-education-hero.netlify.app" },
   { src: "/vex.gif", name: "VEX Ventures", url: "https://vex-ventures.vercel.app" },
   { src: "/mindloop.gif", name: "Mindloop", url: "https://mindloop-cinematic-landing-page.netlify.app" },
