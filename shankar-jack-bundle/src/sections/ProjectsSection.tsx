@@ -47,6 +47,17 @@ const PROJECTS = [
       col1_1: "/yacht-1.jpg",
       col1_2: "/yacht-2.jpg"
     }
+  },
+  {
+    id: "05",
+    name: "Madinah Auto",
+    category: "Hypercar Atelier",
+    url: "https://madinah-auto-dubai.vercel.app/",
+    description: "An immersive, ultra-luxury digital experience built for a Dubai-based hypercar modification atelier. The platform blends editorial haute couture aesthetics with high-performance creative engineering, featuring 3D spring-physics tilt cards, 60fps Lenis smooth scrolling, titanium exhaust audio integration, and interactive spec drawers.",
+    images: {
+      col1_1: "/madinah-1.png",
+      col1_2: "/madinah-preview.gif"
+    }
   }
 ];
 
