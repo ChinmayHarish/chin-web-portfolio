@@ -45,7 +45,7 @@ const PROJECTS = [
     description: "A bespoke digital flagship for an elite maritime club, featuring hardware-accelerated video streaming, Lenis momentum physics scrolling, GSAP staggered multi-layer menus, and a refined glassmorphic design system.",
     images: {
       col1_1: "/yacht-1.jpg",
-      col1_2: "/yacht-2.jpg"
+      col1_2: "/yacht-preview.gif"
     }
   },
   {
