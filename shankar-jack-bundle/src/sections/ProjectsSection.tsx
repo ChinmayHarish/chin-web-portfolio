@@ -12,7 +12,7 @@ const PROJECTS = [
     description: "A luxury residential digital experience showcasing premium 2 BHK apartments in Mangalore. Designed with elegance and sophistication to reflect the high-end architectural vision.",
     images: {
       col1_1: "/capital-epitome-1.png",
-      col1_2: "/capital-epitome-2.png"
+      col1_2: "/capital-epitome-preview.gif"
     }
   },
   {
@@ -23,7 +23,7 @@ const PROJECTS = [
     description: "A bold, dynamic portfolio for a video production house crafting commercial films, brand stories, and social-first content designed from concept to final cut to make attention-starved audiences look twice.",
     images: {
       col1_1: "/geecee-3.png",
-      col1_2: "/geecee-2.png"
+      col1_2: "/geecee-preview.gif"
     }
   },
   {
@@ -34,7 +34,7 @@ const PROJECTS = [
     description: "A clean, fast-paced workspace built for teams tired of cluttered project boards and endless status meetings, designed to make managing tasks and shipping work feel effortless again.",
     images: {
       col1_1: "/strata-1.png",
-      col1_2: "/strata-2.png"
+      col1_2: "/strata-preview.gif"
     }
   },
   {
